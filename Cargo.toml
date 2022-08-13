@@ -1,0 +1,27 @@
+[package]
+name = "cognitoauth"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "cognito srp authentication library"
+repository = "https://github.com/lucdew/cognito-srp-auth"
+keywords = ["crypto", "aws", "aws cognito"]
+categories = ["cryptography", "authentication"]
+readme = "README.md"
+rust-version = "1.56"
+
+
+[dependencies]
+aws-config = "0.46.0"
+aws-sdk-cognitoidentityprovider = "0.16.0"
+aws-smithy-client = { version = "0.46.0", features = ["client-hyper", "rt-tokio"] }
+cognito_srp = { path = "../cognito-srp" }
+env_logger = "0.9.0"
+hyper-proxy = "0.9.1"
+hyper-tls = "0.5.0"
+hyper = "0.14.20"
+regex = "1.6.0"
+structopt = "0.3.26"
+tokio = { version = "1", features = ["full"] }
+thiserror = "1.0.32"
+log = "0.4.17"
