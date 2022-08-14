@@ -19,5 +19,7 @@ pub enum CognitoSrpAuthError {
     CognitoInitiateError(#[from] aws_smithy_client::SdkError<InitiateAuthError>),
 
     #[error("cognito idp response to auth challenge error: {0}")]
-    CognitoIniateError(#[from] aws_smithy_client::SdkError<RespondToAuthChallengeError>),
+    CognitoResponseToAuthChallengeError(
+        #[from] aws_smithy_client::SdkError<RespondToAuthChallengeError>,
+    ),
 }
